@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-base_df = pd.read_csv("data/Driving.csv")
+base_df = pd.read_csv("data/Walking.csv")
 
 
 def moving_average(x, w):
@@ -22,7 +22,7 @@ fig, ax = plt.subplots()
 ax.plot(x, y, color='aqua')
 ax.plot(x_mean, y_mean, color='red')
 
-ax.set(xlabel='phone_lat', ylabel='phone_long',
+ax.set(xlabel='phone_long', ylabel='phone_lat',
        title='Mean')
 ax.grid()
 
