@@ -20,8 +20,8 @@ y_median = y.rolling(10).median()
 
 fig, ax = plt.subplots()
 
-ax.plot(x, y, color='red')
-ax.plot(x_median, y_median, color='green')
+ax.plot(x, y, color='aqua')
+ax.plot(x_median, y_median, color='red')
 
 ax.set(xlabel='phone_lat', ylabel='phone_long',
        title='Median')

@@ -30,7 +30,6 @@ with open('handled_csv/mean.csv', 'w', newline='') as f:
 
 df = pd.read_csv('handled_csv/mean2.csv')
 
-
 # Create a map with a location start point
 myMap = folium.Map(zoom_start=12, location=[56.25714966666666, 10.0690625])
 

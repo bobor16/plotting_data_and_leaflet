@@ -19,8 +19,8 @@ y_mean = moving_average(y, 10)
 
 fig, ax = plt.subplots()
 
-ax.plot(x, y)
-ax.plot(x_mean, y_mean)
+ax.plot(x, y, color='aqua')
+ax.plot(x_mean, y_mean, color='red')
 
 ax.set(xlabel='phone_lat', ylabel='phone_long',
        title='Mean')
