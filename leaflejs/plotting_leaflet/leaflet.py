@@ -19,29 +19,26 @@ y = base_df["phone_long"]
 x_mean = moving_average(x, 10)
 y_mean = moving_average(y, 10)
 
-fieldNames = ['lng', 'lat']
-rows = [
-    {'lng': x_mean,
-     'lat': y_mean}
-]
+rows = [{x_mean, y_mean}]
 
-with open('handled_csv/mean.csv', 'w', encoding='UTF8', newline='') as f:
+with open('handled_csv/mean.csv', 'w', newline='') as f:
 
+    fieldNames = ['lng', 'lat']
     writer = csv.DictWriter(f, fieldnames=fieldNames)
     writer.writeheader()
-    writer.writerows(rows)
+    writer.writerows({'lng': x_mean, 'lat': y_mean})
 
-df = pd.read_csv('handled_csv/mean.csv')
+df = pd.read_csv('handled_csv/mean2.csv')
 
 
 # Create a map with a location start point
 myMap = folium.Map(zoom_start=12, location=[56.25714966666666, 10.0690625])
 
 # Iterate through the csv file and save a html file with the
-for i, r in base_df.iterrows():
+for i, r in df.iterrows():
     folium.map.Marker(
-        location=[r['phone_lat'], r['phone_long']],
-        # location=[test_x, test_y],
+        # location=[r['phone_lat'], r['phone_long']],
+        location=[r['lat'], r['lng']],
         popup=[x, y],
         icon=folium.Icon(color="green", icon="bicycle", prefix='fa')
     ).add_to(myMap)

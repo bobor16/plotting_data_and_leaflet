@@ -23,8 +23,8 @@ ax.plot(x, y)
 ax.plot(x_mean, y_mean)
 
 ax.set(xlabel='phone_lat', ylabel='phone_long',
-       title='')
+       title='Mean')
 ax.grid()
 
-fig.savefig("Mean.png")
+fig.savefig("images/Mean.png")
 plt.show()

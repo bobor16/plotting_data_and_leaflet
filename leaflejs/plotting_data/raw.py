@@ -12,20 +12,14 @@ def moving_average(x, w):
 x = base_df["phone_lat"]
 y = base_df["phone_long"]
 
-x_mean = moving_average(x, 10)
-y_mean = moving_average(y, 10)
-
-x_median = x.rolling(10).median()
-y_median = y.rolling(10).median()
 
 fig, ax = plt.subplots()
 
 ax.plot(x, y)
-ax.plot(x_median, y_median)
 
 ax.set(xlabel='phone_lat', ylabel='phone_long',
-       title='Median')
+       title='Raw')
 ax.grid()
 
-fig.savefig("images/Median.png")
+fig.savefig("images/raw.png")
 plt.show()
