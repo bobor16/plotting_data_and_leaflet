@@ -15,7 +15,7 @@ y = base_df["phone_long"]
 
 fig, ax = plt.subplots()
 
-ax.plot(x, y)
+ax.plot(x, y, color='blue')
 
 ax.set(xlabel='phone_lat', ylabel='phone_long',
        title='Raw')
